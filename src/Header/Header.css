@@ -1,0 +1,19 @@
+.headerLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 32px;
+}
+
+.header-link {
+  display: flex;
+  flex-direction: row;
+  margin-left: -21rem;
+  gap: 3rem;
+  font-size: larger;
+}
+
+a {
+  text-decoration: none;
+}
