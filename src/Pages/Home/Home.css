@@ -1,0 +1,40 @@
+.posterImages {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.PosterImage_Overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 50%;
+  margin-bottom: 5rem;
+  gap: 2rem;
+  color: #fff;
+  z-index: 2;
+}
+
+.posterImageTitle {
+  margin-right: 20rem;
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+.posterimage_description {
+  display: flex;
+  width: 81%;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.posterss {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-weight: 700;
+  margin-left: 4px;
+}

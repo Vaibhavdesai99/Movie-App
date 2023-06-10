@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+// Imported Carousel for automatic sliding images on
 import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
@@ -27,36 +28,37 @@ const Home = () => {
       <Carousel
         showThumbs={false}
         autoPlay={true}
-        transitionTime={3}
+        transitionTime={2}
         infiniteLoop={true}
         showStatus={false}
       >
         {popularMovies.map((movie) => (
-          <div key={movie.id} className="posterImages">
-            <Link to={`/movie/${movie.id}`}>
+          <Link to={`/movie/${movie.id}`}>
+            <div key={movie.id} className="posterImages">
               <img
                 src={`https://image.tmdb.org/t/p/original${
                   movie && movie.backdrop_path
                 }`}
                 alt="img"
               />
-            </Link>
-            <div className="PosterImage_Overlay">
-              <div className="posterImageTitle">
-                {movie ? movie.original_title : ""}
-              </div>
-              <div className="poster" id="mages_runTime">
-                {movie ? movie.releaase_date : ""}
-                <span className="poster_img_Rating">
-                  {movie ? movie.vote_average : ""}
-                  <i className="fas fa-star" />
-                </span>
-              </div>
-              <div className="posterimage_description">
-                {movie ? movie.overview : ""}
+
+              <div className="PosterImage_Overlay">
+                <div className="posterImageTitle">
+                  {movie ? movie.original_title : ""}
+                </div>
+                <div className="posterss" id="mages_runTime">
+                  {movie ? movie.release_date : ""}
+                  <span className="poster_img_Rating">
+                    {movie ? movie.vote_average : ""}
+                    <i className="fas fa-star" />
+                  </span>
+                </div>
+                <div className="posterimage_description">
+                  {movie ? movie.overview : ""}
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </Carousel>
     </div>
