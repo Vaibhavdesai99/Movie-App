@@ -4,6 +4,7 @@ import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // Imported Carousel for automatic sliding images on
 import { Carousel } from "react-responsive-carousel";
+import MovieList from "../../MovieList/MovieList";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -28,7 +29,7 @@ const Home = () => {
       <Carousel
         showThumbs={false}
         autoPlay={true}
-        transitionTime={2}
+        transitionTime={3}
         infiniteLoop={true}
         showStatus={false}
       >
@@ -61,6 +62,7 @@ const Home = () => {
           </Link>
         ))}
       </Carousel>
+      <MovieList />
     </div>
   );
 };

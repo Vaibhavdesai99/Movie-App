@@ -1,0 +1,21 @@
+.movie_list {
+  margin-top: 20px;
+}
+
+.list_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.list_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .list_cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
