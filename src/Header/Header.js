@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="headerLeft">
-        <Link to="/">
+        <Link to="/Home">
           <img
             className="header_logo"
             src={NetFlixLogo}

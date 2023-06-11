@@ -1,0 +1,170 @@
+.Main_Div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 9rem;
+}
+
+.horizontalLine {
+  display: flex;
+  gap: 55rem;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 1rem;
+  margin-right: -4rem;
+}
+
+.forImg img {
+  height: 90px;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.languages select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.SignIn button {
+  padding: 8px 16px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.SignIn button:hover {
+  background-color: #ff0f2d;
+}
+
+.screenContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.ScreentTEXT {
+  text-align: center;
+
+  gap: 21px;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  display: flex;
+  gap: 10px;
+}
+
+.mainText {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.inputField button {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 181%;
+  margin-right: 0rem;
+  height: 138%;
+  padding: 6px 8px;
+  font-weight: bold;
+}
+
+.inputField input {
+  background: none;
+  color: white;
+  width: 352%;
+  height: 121%;
+}
+
+/* only screen and (min-width: 480px) */
+/* Styles for mobile view */
+@media only screen and (max-width: 480px) {
+  .Main_Div {
+    gap: 1rem;
+  }
+
+  .horizontalLine {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: -6rem;
+    margin-right: 0;
+  }
+
+  .forImg img {
+    height: 60px;
+    margin-top: 2rem;
+  }
+
+  .rightSide {
+    flex-direction: row;
+    align-items: center;
+    gap: 16rem;
+
+    margin-top: -3rem;
+  }
+
+  .languages select {
+    font-size: 14px;
+  }
+
+  .SignIn button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .screenContent {
+    margin-top: 20px;
+  }
+
+  .ScreentTEXT {
+    gap: 10px;
+  }
+
+  .inputField {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mainText {
+    font-size: x-large;
+    margin-top: 3rem;
+  }
+
+  .inputField button {
+    width: 100%;
+    height: auto;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .inputField input {
+    width: 100%;
+    height: auto;
+  }
+}
