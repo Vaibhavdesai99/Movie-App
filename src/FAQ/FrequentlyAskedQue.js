@@ -5,8 +5,12 @@ import FAQIMG from "../Images/souvik-banerjee-I4MTFEPvpdk-unsplash.jpg";
 import FAQTWO from "../Images/charlesdeluvio-MDUI8XIq6Mc-unsplash.jpg";
 import FAQTHREE from "../Images/tomas-evaristo-G03vSUk9wR0-unsplash.jpg";
 import FAQFOUR from "../Images/freestocks-11SgH7U6TmI-unsplash.jpg";
+import { useSelector } from "react-redux";
 import Logo from "../Images/netflix.png";
+
 const FrequentlyAskedQue = () => {
+  const userEmail = useSelector((state) => state.auth.isEmailVerified);
+  console.log(userEmail);
   return (
     <div className="Div" style={{ background: " white" }}>
       <nav className="Navbar">
@@ -14,7 +18,7 @@ const FrequentlyAskedQue = () => {
           <img src={Logo} width="20%" />
         </div>
         <div>| Help Center</div>
-        <div>Email</div>
+        <div>{userEmail}</div>
       </nav>
       <div
         className="Info_FirstDiv "
@@ -27,7 +31,7 @@ const FrequentlyAskedQue = () => {
           color: "black",
         }}
       >
-        <Link to="/Home">
+        <Link to="/">
           <div>Back To Home</div>
         </Link>
         <div style={{ fontWeight: "bold", color: "black" }}>

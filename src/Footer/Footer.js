@@ -1,7 +1,10 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Footer = () => {
+  const userEmail = useSelector((state) => state.auth.isEmailVerified);
+  console.log(userEmail);
   return (
     <div
       className="Footer"
@@ -18,11 +21,14 @@ const Footer = () => {
         <Link to="/FAQ">
           <div style={{ textDecoration: "underLine" }}>FAQ</div>
         </Link>
-        <div>Contact Us</div>
+        <Link to="/contactUs" style={{ textDecoration: "underLine" }}>
+          <div>Contact Us</div>
+        </Link>
+
         <Link to="/SignIn">
           <div style={{ textDecoration: "underLine" }}>Sign In</div>
         </Link>
-        <div>Netflix India</div>
+        <div style={{ color: "red" }}>Netflix India</div>
       </div>
     </div>
   );

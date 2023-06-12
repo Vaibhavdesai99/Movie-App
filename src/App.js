@@ -8,6 +8,7 @@ import Frontpage from "./FrontPage/Frontpage";
 import SignIn from "./SignIn/SignIn";
 import FrequentlyAskedQue from "./FAQ/FrequentlyAskedQue";
 import { useSelector } from "react-redux";
+import ContactUs from "./ContactUS/ContactUs";
 
 function App() {
   const isLogIn = useSelector((state) => state.auth.isLogIn);
@@ -25,6 +26,7 @@ function App() {
           <Route path="/*" element={<h1>Error page</h1>} />
           <Route path="SignIn" element={<SignIn />} />
           <Route path="/FAQ" element={<FrequentlyAskedQue />} />
+          <Route path="/contactUs" element={<ContactUs />} />
         </Routes>
       </Router>
     </div>

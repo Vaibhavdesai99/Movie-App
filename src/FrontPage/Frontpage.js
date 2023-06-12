@@ -10,9 +10,10 @@ import Footer from "../Footer/Footer";
 const Frontpage = () => {
   const navigate = useNavigate();
   const VerifyEmail = () => {
-    toast.success("Verified Email ");
+    toast.success("Email does not Exist plz SignUp ");
   };
 
+  console.log("hello world");
   const signInPage = () => {
     navigate("/SignIn");
   };
@@ -52,7 +53,7 @@ const Frontpage = () => {
             </span>
           </div>
           <div className="inputField">
-            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="Email" required />
             <button onClick={VerifyEmail}>Verify Email</button>
           </div>
         </div>

@@ -11,6 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userEmail = useSelector((state) => state.auth.isEmailVerified);
+  console.log(userEmail);
 
   // console.log(userEmail);
 
