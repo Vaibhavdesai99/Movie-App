@@ -1,0 +1,8 @@
+.SubFooter {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: 900;
+  margin-bottom: 7rem;
+}

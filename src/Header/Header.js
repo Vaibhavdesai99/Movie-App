@@ -2,9 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NetFlixLogo from "../Images/netflix.png";
 import "./Header.css";
+import { useSelector } from "react-redux";
+
 const Header = () => {
+  const userEmail = useSelector((state) => state.auth.isEmailVerified);
+  // console.log(userEmail);
   return (
-    <div className="header">
+    <div className="header" style={{ marginBottom: "-3rem" }}>
       <div className="headerLeft">
         <Link to="/Home">
           <img
@@ -16,14 +20,22 @@ const Header = () => {
         </Link>
         <div className="header-link">
           <Link to="/movies/popular">
-            <span>Popular</span>
+            <span style={{ fontWeight: "bold" }}>Popular</span>
           </Link>
           <Link to="/movies/top_rated">
-            <span>Top Rated</span>
+            <span style={{ fontWeight: "bold" }}>Top Rated</span>
           </Link>
           <Link to="/movies/upcoming">
-            <span>Upcoming</span>
+            <span style={{ fontWeight: "bold" }}>Upcoming</span>
           </Link>
+        </div>
+      </div>
+      <div className="userEmailWhenLogIn">
+        <div className="useremail" style={{ color: "red", fontWeight: "bold" }}>
+          {userEmail}
+        </div>
+        <div className="logOut">
+          <button onClick={LogOutHandler}>LogOut</button>
         </div>
       </div>
     </div>

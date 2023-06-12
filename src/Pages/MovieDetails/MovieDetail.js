@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MovieDetail.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const MovieDetail = () => {
   const [currentMovie, setCurrentMovie] = useState();
@@ -23,6 +23,9 @@ const MovieDetail = () => {
     }
   };
 
+  const MovietoNetflix = () => {
+    window.location.href = "https://www.netflix.com/in/";
+  };
   return (
     <div className="movie_detail">
       {currentMovie && (
@@ -52,6 +55,9 @@ const MovieDetail = () => {
             />
           </div>
           <p className="movie_overview">{currentMovie.overview}</p>
+          <div className="MovieWatchNow">
+            <button onClick={MovietoNetflix}>Watch Now</button>
+          </div>
         </>
       )}
     </div>

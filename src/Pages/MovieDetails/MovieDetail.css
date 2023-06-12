@@ -76,3 +76,25 @@
 .movie_details_value {
   margin-left: 10px;
 }
+
+.MovieWatchNow {
+  position: relative;
+  margin-left: 26rem;
+
+  margin-top: -10rem;
+}
+
+.MovieWatchNow button {
+  padding: 9px 16px;
+  border: none;
+  background: none;
+  color: red;
+  border: 3px solid red;
+  border-radius: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.MovieWatchNow button:hover {
+  color: white;
+}

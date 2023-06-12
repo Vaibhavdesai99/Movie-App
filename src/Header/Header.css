@@ -17,3 +17,21 @@
 a {
   text-decoration: none;
 }
+
+.userEmailWhenLogIn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 68rem;
+  position: relative;
+  top: -70px;
+}
+
+.logOut button {
+  border: 3px solid red;
+  padding: 5px 9px;
+  border-radius: 10px;
+  background: none;
+  color: red;
+  font-weight: bold;
+}

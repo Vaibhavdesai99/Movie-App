@@ -87,18 +87,22 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 181%;
+  width: 45%;
   margin-right: 0rem;
-  height: 138%;
+  height: 103%;
   padding: 6px 8px;
   font-weight: bold;
 }
 
 .inputField input {
+  width: 94%;
+  padding: 0.5rem;
+  font: inherit;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   background: none;
   color: white;
-  width: 352%;
-  height: 121%;
 }
 
 /* only screen and (min-width: 480px) */

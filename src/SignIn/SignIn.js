@@ -4,8 +4,11 @@ import { useNavigate } from "react-router-dom";
 import backgroundImg from "../Images/dcl-650-Bx5-8M-y0sI-unsplash.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useDispatch } from "react-redux";
+import { authActions } from "../StoreRedux/Auth";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   const backgroundImageStyle = {
     backgroundImage: `url(${backgroundImg})`,
   };
@@ -47,11 +50,18 @@ const SignIn = () => {
         );
         if (response.ok) {
           // Sign-in successful
-          toast.success("Login Successfully");
           const data = await response.json();
-          console.log(data.email);
+          const UserEmail = data.email;
+          toast.success("Login Successfully");
           localStorage.setItem("email", data.email);
           localStorage.setItem("token", data.idToken);
+
+          // Dispatch the action : when user is log in .
+          dispatch(authActions.setLogIn(true));
+
+          // Dispatch the action : Email Verify
+          dispatch(authActions.setEmailVerified(UserEmail));
+
           // whenever the POST req is succ means user login then , redirect him to Home page .
           navigate("/Home");
         } else {
@@ -81,6 +91,7 @@ const SignIn = () => {
           // Handle successful sign-up
           const data = await response.json();
           console.log(data);
+
           toast.success("Account Created Successfully.");
           emailInputRef.current.value = "";
           passwordInputRef.current.value = "";
