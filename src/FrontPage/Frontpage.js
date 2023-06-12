@@ -6,14 +6,23 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { useRef } from "react";
 
 const Frontpage = () => {
+  const userEmail = useRef();
   const navigate = useNavigate();
+
   const VerifyEmail = () => {
-    toast.success("Email does not Exist plz SignUp ");
+    const enteredUserEmail = userEmail.current.value;
+    if (enteredUserEmail === "") {
+      toast("Please enter the Email");
+    } else if (!enteredUserEmail.includes("@")) {
+      toast("Email should contain @");
+    } else {
+      toast.success("Email does not Exist , Create New Account");
+    }
   };
 
-  console.log("hello world");
   const signInPage = () => {
     navigate("/SignIn");
   };
@@ -53,7 +62,7 @@ const Frontpage = () => {
             </span>
           </div>
           <div className="inputField">
-            <input type="text" placeholder="Email" required />
+            <input type="email" placeholder="Email" ref={userEmail} required />
             <button onClick={VerifyEmail}>Verify Email</button>
           </div>
         </div>
