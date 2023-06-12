@@ -3,10 +3,21 @@ import { Link } from "react-router-dom";
 import NetFlixLogo from "../Images/netflix.png";
 import "./Header.css";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { authActions } from "../StoreRedux/Auth";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const userEmail = useSelector((state) => state.auth.isEmailVerified);
+
   // console.log(userEmail);
+
+  const LogOutHandler = () => {
+    dispatch(authActions.setLogOut());
+    navigate("/");
+  };
   return (
     <div className="header" style={{ marginBottom: "-3rem" }}>
       <div className="headerLeft">
@@ -35,7 +46,9 @@ const Header = () => {
           {userEmail}
         </div>
         <div className="logOut">
-          <button onClick={LogOutHandler}>LogOut</button>
+          <button onClick={LogOutHandler} style={{ cursor: "pointer" }}>
+            LogOut
+          </button>
         </div>
       </div>
     </div>
