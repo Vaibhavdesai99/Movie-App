@@ -14,7 +14,10 @@ const Footer = () => {
         padding: "39px",
       }}
     >
-      <div style={{ margin: "3rem 28rem", fontWeight: "bold" }}>
+      <div
+        className="responsive"
+        style={{ margin: "3rem 28rem", fontWeight: "bold" }}
+      >
         Questions? Call 000-800-919-1694
       </div>
       <div className="SubFooter">

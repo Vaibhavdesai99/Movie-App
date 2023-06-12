@@ -31,7 +31,7 @@ const FrequentlyAskedQue = () => {
           color: "black",
         }}
       >
-        <Link to="/">
+        <Link to="/Home">
           <div>Back To Home</div>
         </Link>
         <div style={{ fontWeight: "bold", color: "black" }}>

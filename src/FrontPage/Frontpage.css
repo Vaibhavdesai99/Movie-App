@@ -110,6 +110,7 @@
 @media only screen and (max-width: 480px) {
   .Main_Div {
     gap: 1rem;
+    margin-left: 0rem;
   }
 
   .horizontalLine {
@@ -130,7 +131,7 @@
     align-items: center;
     gap: 16rem;
 
-    margin-top: -3rem;
+    margin-top: -1rem;
   }
 
   .languages select {
@@ -157,7 +158,7 @@
 
   .mainText {
     font-size: x-large;
-    margin-top: 3rem;
+    margin-top: 7rem;
   }
 
   .inputField button {
@@ -168,7 +169,7 @@
   }
 
   .inputField input {
-    width: 100%;
+    width: 91%;
     height: auto;
   }
 }

@@ -35,3 +35,27 @@ a {
   color: red;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 480px) {
+  .header-link {
+    font-size: smaller;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-left: -25rem;
+  }
+  .header_logo {
+    width: 14%;
+    margin-left: -1rem;
+  }
+  .userEmailWhenLogIn {
+    margin-left: 23rem;
+    font-size: 10px;
+    margin-top: -22px;
+  }
+  .logOut button {
+    width: 55%;
+    font-size: 11px;
+    margin-left: 38px;
+  }
+}

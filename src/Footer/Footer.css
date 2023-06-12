@@ -6,3 +6,29 @@
   font-weight: 900;
   margin-bottom: 7rem;
 }
+
+@media only screen and (max-width: 480px) {
+  .Footer {
+    margin-top: 2rem;
+    border-top: 7px solid darkgrey;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: -3rem;
+  }
+  .SubFooter {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 900;
+    margin-bottom: 7rem;
+    gap: 18px;
+  }
+  .responsive {
+    margin: 5rem -12rem;
+    font-weight: bold;
+  }
+}

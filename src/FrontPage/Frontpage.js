@@ -19,8 +19,9 @@ const Frontpage = () => {
     } else if (!enteredUserEmail.includes("@")) {
       toast("Email should contain @");
     } else {
-      toast.success("Email does not Exist , Create New Account");
+      toast("Email does not Exist , Create New Account");
     }
+    userEmail.current.value = "";
   };
 
   const signInPage = () => {

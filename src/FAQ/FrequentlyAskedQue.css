@@ -6,3 +6,13 @@
   color: #f8f1f1;
   padding: 5px;
 }
+
+@media only screen and (max-width: 480px) {
+  .Div {
+    margin-left: 0rem;
+  }
+  .Navbar img {
+    margin-left: 11px;
+    margin-top: 8px;
+  }
+}

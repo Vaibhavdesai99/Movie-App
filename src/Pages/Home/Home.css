@@ -40,3 +40,15 @@
   font-weight: 700;
   margin-left: 4px;
 }
+
+@media only screen and (max-width: 480px) {
+  .posterimage_description {
+    width: 41%;
+  }
+  .PosterImage_Overlay {
+    display: none;
+  }
+  .posterImageTitle {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Logo from "../Images/netflix.png";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -17,8 +19,20 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Add logic to handle form submission here
+    if (
+      formData.name === "" ||
+      formData.email === "" ||
+      formData.message === ""
+    ) {
+      toast("Fill the Input field first");
+    } else {
+      toast.success("Successfully send the data");
+    }
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -28,10 +42,10 @@ const ContactUs = () => {
     >
       <nav className="Navbar">
         <div>
-          <img src={Logo} width="20%" />
+          <img src={Logo} width="20%" alt="img" />
         </div>
         <div>| Help Center</div>
-        <div>Email</div>
+        <div className="right">Email</div>
       </nav>
       <div className="contact-us" style={{ color: "black" }}>
         <h2>Contact Us</h2>
@@ -71,6 +85,7 @@ const ContactUs = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
