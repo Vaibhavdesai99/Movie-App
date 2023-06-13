@@ -29,6 +29,7 @@
   }
   .responsive {
     margin: 5rem -12rem;
+    display: contents;
     font-weight: bold;
   }
 }

@@ -52,6 +52,8 @@ const SignIn = () => {
           // Sign-in successful
           const data = await response.json();
           const UserEmail = data.email;
+          const idToken = data.idToken;
+          console.log(idToken);
           toast.success("Login Successfully");
           localStorage.setItem("email", data.email);
           localStorage.setItem("token", data.idToken);
@@ -62,12 +64,17 @@ const SignIn = () => {
           // Dispatch the action : Email Verify
           dispatch(authActions.setEmailVerified(UserEmail));
 
+          // Dispatch the action : idToken
+          dispatch(authActions.setIdToken(idToken));
+
           // whenever the POST req is succ means user login then , redirect him to Home page .
           navigate("/Home");
         } else {
           const errorData = await response.json();
           console.log(errorData.message);
           toast.error("Login failed: " + errorData.error.message);
+          emailInputRef.current.value = "";
+          passwordInputRef.current.value = "";
         }
       } else {
         // If user DONT HAVE ACCOUNT THEN SIGN -UP .

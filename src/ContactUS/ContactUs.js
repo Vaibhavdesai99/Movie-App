@@ -26,7 +26,7 @@ const ContactUs = () => {
     ) {
       toast("Fill the Input field first");
     } else {
-      toast.success("Successfully send the data");
+      toast.success("Thanks for contacting us.");
     }
     setFormData({
       name: "",

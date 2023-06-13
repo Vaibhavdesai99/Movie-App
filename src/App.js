@@ -4,12 +4,11 @@ import Header from "./Header/Header";
 import Home from "./Pages/Home/Home";
 import MovieList from "./MovieList/MovieList";
 import MovieDetail from "./Pages/MovieDetails/MovieDetail";
-import Frontpage from "./FrontPage/Frontpage";
 import SignIn from "./SignIn/SignIn";
 import FrequentlyAskedQue from "./FAQ/FrequentlyAskedQue";
 import { useSelector } from "react-redux";
 import ContactUs from "./ContactUS/ContactUs";
-
+import Frontpage from "./FrontPage/Frontpage";
 function App() {
   const isLogIn = useSelector((state) => state.auth.isLogIn);
   console.log(isLogIn);
