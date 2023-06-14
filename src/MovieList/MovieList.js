@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import "./MovieList.css";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const MovieList = () => {
+  const searchBox = useSelector((state) => state.search.query);
+
   const [movieList, setMovieList] = useState([]);
   const { type } = useParams();
   console.log(type);
 
   useEffect(() => {
     getData();
-  }, []);
-
-  useEffect(() => {
-    getData();
-  }, [type]);
+  }, [type, searchBox]);
 
   const getData = async () => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${
-        type ? type : "popular"
-      }?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
-    );
-    console.log(response);
+    const apiUrl = `https://api.themoviedb.org/3/movie/${
+      type ? type : "popular"
+    }?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`;
+
+    const response = await fetch(apiUrl);
     if (response.ok) {
       const data = await response.json();
       console.log(data.results);
@@ -30,13 +28,23 @@ const MovieList = () => {
     }
   };
 
+  const filteredMovieList = movieList.filter((movie) => {
+    if (!searchBox) {
+      return true; // No search query, include all movies
+    } else {
+      return movie.original_title
+        .toLowerCase()
+        .includes(searchBox.toLowerCase());
+    }
+  });
+
   return (
     <div className="movie_list">
       <h2 className="list_title">{(type ? type : "POPULAR").toUpperCase()}</h2>
       <div className="list_cards">
-        {movieList.map((movie) => {
-          return <Card movie={movie} key={movie.id} />;
-        })}
+        {filteredMovieList.map((movie) => (
+          <Card movie={movie} key={movie.id} />
+        ))}
       </div>
     </div>
   );

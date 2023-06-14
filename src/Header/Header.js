@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NetFlixLogo from "../Images/netflix.png";
 import "./Header.css";
@@ -6,14 +6,21 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { authActions } from "../StoreRedux/Auth";
 import { useNavigate } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
+import { setSearchQuery } from "../StoreRedux/Search";
 
 const Header = () => {
+  const [searchQuery, setSearchQueryy] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userEmail = useSelector((state) => state.auth.isEmailVerified);
-  console.log(userEmail);
-
   // console.log(userEmail);
+
+  const searchMovieHere = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQueryy(query);
+    dispatch(setSearchQuery(query));
+  };
 
   const LogOutHandler = () => {
     dispatch(authActions.setLogOut());
@@ -40,6 +47,17 @@ const Header = () => {
           <Link to="/movies/upcoming">
             <span style={{ fontWeight: "bold" }}>Upcoming</span>
           </Link>
+        </div>
+      </div>
+      <div className="search">
+        <div>
+          <Form.Control
+            type="search"
+            placeholder="Search Here..."
+            onChange={searchMovieHere}
+            value={searchQuery}
+            style={{ width: "37%" }}
+          />
         </div>
       </div>
       <div className="userEmailWhenLogIn">
